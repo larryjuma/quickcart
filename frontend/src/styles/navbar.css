@@ -1,0 +1,211 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--dark);
+  padding: 10px 14px;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+
+  /* Animation magic */
+  animation: fadeSlideDown 2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for navbar entry */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo */
+.navbar-logo h2 {
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+/* Search */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 500px;
+  margin: 8px 16px;
+}
+
+.navbar-search input {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid var(--light);
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.navbar-search button {
+  border-radius: 0 4px 4px 0;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navbar-search button:hover {
+  background: var(--secondary);
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.4s ease;
+}
+
+.navbar-links a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect underline */
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--secondary);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Active link style */
+.navbar-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+  background: var(--primary);
+}
+
+/* Logo subtle glow on hover */
+.navbar-logo h2 {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-logo h2:hover {
+  color: var(--secondary);
+  text-shadow: 0 0 6px var(--primary);
+}
+
+/* Login Button */
+.login-btn {
+  background: var(--primary);
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-left: 12px;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: var(--secondary);
+}
+
+/* ========================= */
+/* HAMBURGER MENU */
+/* ========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Animation (X shape) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========================= */
+/* RESPONSIVE NAVBAR */
+/* ========================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-search {
+    order: 2;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .navbar-links {
+    order: 3;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: var(--dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-links.open {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 10px 0;
+    animation: slideDown 0.5s ease forwards;
+  }
+}
+
+/* Slide + Fade Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
