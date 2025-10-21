@@ -3,12 +3,13 @@ import "../styles/category.css";
 import { Link } from "react-router-dom";
 
 function Gaming({ addToCart }) {
-  const products = [
-    { id: 31, name: "PlayStation", price: 500, rating: 5, category: "Gaming", image: "/QuickCart/images/ps.jpg" },
-    { id: 32, name: "Xbox", price: 450, rating: 4, category: "Gaming", image: "/QuickCart/images/xbox.jpg" },
-    { id: 33, name: "Gaming Keyboard", price: 60, rating: 3, category: "Gaming", image: "/QuickCart/images/gaming-keyboard.jpg" },
-    { id: 34, name: "Gaming Chair", price: 200, rating: 4, category: "Gaming", image: "/QuickCart/images/chair.jpg" },
-  ];
+const products = [
+  { id: 31, name: "PlayStation", price: 500, rating: 5, category: "Gaming", image: `${import.meta.env.BASE_URL}images/ps.jpg` },
+  { id: 32, name: "Xbox", price: 450, rating: 4, category: "Gaming", image: `${import.meta.env.BASE_URL}images/xbox.jpg` },
+  { id: 33, name: "Gaming Keyboard", price: 60, rating: 3, category: "Gaming", image: `${import.meta.env.BASE_URL}images/gaming-keyboard.jpg` },
+  { id: 34, name: "Gaming Chair", price: 200, rating: 4, category: "Gaming", image: `${import.meta.env.BASE_URL}images/chair.jpg` },
+];
+
 
   return (
     <div className="category-page">
