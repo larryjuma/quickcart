@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/quickcart-frontend/', // ✅ Must match your GitHub repo name
+  base: '/quickcart/', // must match your repo name
 })
