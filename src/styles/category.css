@@ -1,0 +1,91 @@
+/* Category Page */
+.category-page {
+  padding: 40px 20px;
+}
+
+.category-page h1 {
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.category-page p {
+  margin-bottom: 20px;
+  color: var(--gray);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+
+/* Price + Rating on the same row */
+.price-rating {
+  display: flex;
+  justify-content: center; /* keep them grouped in center */
+  gap: 30px; /* control spacing between price and rating */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #f39c12; /* golden yellow */
+}
+
+
+.rating .star {
+  font-size: 1rem;
+  color: #f39c12; /* gold */
+}
+
+.rating .star.empty {
+  color: #ddd; /* gray for empty stars */
+}
+
+/* Add to cart button */
+.add-to-cart {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: var(--accent);
+}
